@@ -1,24 +1,33 @@
 package comunicacion;
 
-import javax.print.DocFlavor.STRING;
-
 public class Libro extends Escrito{
     String co_autor;
     String editorial;
     String edicion;
     String interpretacion;
 
-    //Metodos "Abstractos"
+    //METODOS
     public int palabrasTotales(int palabrasPagina){
-        return 5;
+        int ini=(this.getPaginas()*palabrasPagina);
+        int resultado=(ini*2);
+        return resultado;
     }
 
     public String interpretacion (){
-        return "prueba";
+        return this.interpretacion;
     }
 	
 	public String toString(){
-        return "prueba";
+        String retorno = (this.getOrigen()+"\n"+
+                            this.getTitulo()+"\n"+
+                            this.getAutor()+"\n"+
+                            this.getPaginas()+"\n"+
+                            this.getCo_autor()+"\n"+
+                            this.getEditorial()+"\n"+
+                            this.getEdicion()
+                            );
+        return retorno;
+        
     }
 	
 
